@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Hospital Stats{% endblock %}
+{% block head %}Hospital Statistics{% endblock %}
+{% block content %}
+<form action="." method="post"/>{% csrf_token %}
+        <table border="0">
+            <h1>{{hospital.name}}</h1>
+            <br /><br />
+            <p>Patients: {{patient.count}}</p>
+            <br /><br />
+            <p>Doctors: {{doctor.count}}</p>
+            <br /><br />
+            <p>Nurses: {{ nurse.count }}</p>
+            <br /><br />
+        </table>
+        <button type="button" onclick="window.location.href='http://127.0.0.1:8000' ">Back</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+<!-- home.html -->
+
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Home{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css '%}"
+
+    <h1> Welcome, {{ user.first_name }}! </h1>
+    <body>
+    <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/logout/">Log Out</a></li>
+    </ul>
+        <div class="button-holder">
+
+            <p><font size = "6"><u>My Account</u></font></p>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/patient_details/' ">Account Information</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/update_user_profile/' ">Update Information</button>
+            <br /> <br />
+
+            <p><font size = "6"><u>My Prescriptions</u></font></p>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/prescriptions/' ">Prescriptions</button>
+            <br /> <br />
+
+            <p><font size = "6"><u>My Appointments</u></font></p>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/new_appointment/' ">Create Appointment</button>
+            <br /> <br />
+            <!--
+            <button type="button" onclick="window.location.href='/update_appointment/' ">Update Appointment</button>
+            <br /> <br />
+            -->
+            <button type="button" onclick="window.location.href='/appointment_calendar/' ">Appointment Calendar</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/view_appointments/' ">Update Appointments</button>
+            <br /> <br />
+
+            <p><font size = "6"><u>My Tests And Results</u></font></p>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/view_tests/' ">View Test</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/view_results/' ">View Results</button>
+            <br /> <br />
+
+            <p><font size = "6"><u>Private Message</u></font></p>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/messages/write' ">Send Messages</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/messages/inbox/' ">View inbox</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/messages/sent/' ">View Sent Messages</button>
+            <br /> <br />
+
+            <button type="button" onclick="window.location.href='export_view' ">Export Information</button>
+            <br /> <br />
+
+        </div>
+    </body>
+{% endblock %}
+

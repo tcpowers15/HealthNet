@@ -1,0 +1,26 @@
+<!-- PatientHome.html -->
+
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Welcome to Django{% endblock %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css '%}"
+{% endblock %}
+{% block content %}
+    <h1> Welcome, {{ user.username }}! </h1>
+    <body>
+        <div class="button-holder">
+            <button type="button" onclick="window.location.href='/hospital/' ">Register Hospital</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/registerDoctor/' ">Register Doctor</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/registerNurse/' ">Register Nurse</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/registerAdmin/' ">Register Hospital Admin</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/logout/' ">Logout</button>
+            <br /> <br />
+        </div>
+    </body>
+{% endblock %}
+

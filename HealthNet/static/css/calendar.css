@@ -1,0 +1,15 @@
+
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: black;
+    font-weight: bold;
+
+    /*color stuff*/
+
+    background: #50dba1;
+    background: -webkit-linear-gradient(top left, #50dba1 0%, #53e3a6 100%);
+    background: linear-gradient(to bottom right, #50dba1 0%, #53e3a6 100%);
+
+
+}

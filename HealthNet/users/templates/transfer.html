@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Admissions{% endblock %}
+{% block head %}Admit or Discharge{% endblock %}
+{% block content %}
+<form action="." method="post"/>{% csrf_token %}
+        <table border="0">
+            {% for patient in patients %}
+                <p>Patient Name: {{patient.first_name}}{{ ' ' }}{{patient.last_name}}</p>
+                <br /><br />
+                <a href="{% url "Transfer" pk=patient.id %}">Edit</a>
+                <br /><br />
+            {% endfor %}
+        </table>
+        <button type="button" onclick="window.location.href='http://127.0.0.1:8000' ">Back</button>
+</form>
+
+{% endblock %}

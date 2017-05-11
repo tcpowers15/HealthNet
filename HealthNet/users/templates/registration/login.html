@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Welcome To HealthNet{% endblock %}
+{% block head %}Welcome To HealthNet{% endblock %}
+
+{% block content %}
+
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+    <br /><br />
+
+    <p>What is <a href="/about/" >HealthNet</a>?</p>
+    <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>{{ form.username.label_tag }}</td>
+                <td>{{ form.username }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.password.label_tag }}</td>
+                <td>{{ form.password }}</td>
+            </tr>
+       </table>
+
+        <div class="buttonHolder">
+        <input type="submit" value="Log In" />
+        <input type="hidden" name="next" value="{{ next }}" />
+        </div>
+
+        <div style="text-align:center;">
+        <button type="button" onclick="window.location.href='http://127.0.0.1:8000/register/' ">Patient Registration</button>
+        </div>
+   </form>
+
+{% endblock %}

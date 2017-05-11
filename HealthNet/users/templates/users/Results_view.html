@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Test Results{% endblock %}
+{% block head %}Test Results{% endblock %}
+{% block content %}
+<form action="." method="post"/>{% csrf_token %}
+        <table border="0">
+        {% for tests in tests %}
+            <h1>Test: {{tests.test_name}}</h1>
+            <p>Results: {{ tests.results }}</p>
+            {% endfor %}
+        </table>
+        <button type="button" onclick="window.location.href='http://127.0.0.1:8000' ">Back</button>
+</form>
+
+{% endblock %}
+
+    </body>
+
+</html>

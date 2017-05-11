@@ -1,0 +1,65 @@
+<!-- PatientHome.html -->
+
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Doctor Home{% endblock %}
+{% block head %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css '%}">
+    <h1> Welcome, {{ user.first_name }}! </h1>
+
+
+    <body>
+    <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/logout/">Log Out</a></li>
+    </ul>
+
+        <div class="patient prescriptions">
+            <p><font size = "6"><u>Patient Prescriptions</u></font></p>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/add_prescription/' ">Add Prescription</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/prescriptionsD/' ">View Prescription</button>
+            <br /> <br />
+
+            <p><font size = "6"><u>Patient Appointment</u></font></p>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/new_appointment_D/' ">Create Appointment</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/appointment_calendar/' ">Appointment Calendar</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/view_appointments/' ">Update Appointments</button>
+            <br /> <br />
+
+            <p><font size = "6"><u>Patient Test And Result</u></font></p>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/add_new_test/' ">Add Test</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/view_testsD/' ">View Test</button>
+            <br /> <br />
+
+            <p><font size = "6"><u>Patient Admitting and Transferring</u></font></p>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/view_med/' ">Update Patient Medical Information</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/admitview/' ">Admit or Discharge</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/transferview/' ">Transfer Patient</button>
+            <br /> <br />
+
+            <p><u><font size = "6">Private Message</font></u></p>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/messages/write' ">Send Messages</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/messages/inbox' ">View Inbox</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/messages/sent' ">View Sent Messages</button>
+            <br /> <br />
+
+        </div>
+    </body>
+
+{% endblock %}
+

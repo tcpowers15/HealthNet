@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Prescription{% endblock %}
+{% block head %}Prescription{% endblock %}
+{% block content %}
+<form action="." method="post"/>{% csrf_token %}
+        <table border="0">
+            {% for prescription in prescriptions %}
+            <h1>{{prescription.prescription_name}}</h1>
+            <br /><br />
+            <p>Dosage: {{prescription.dosage}}</p>
+            <br /><br />
+            <p>Taken Per Day: {{prescription.Taken_Per_Day|linebreaksbr}}</p>
+            <br /><br />
+            {% endfor %}
+        </table>
+        <button type="button" onclick="window.location.href='http://127.0.0.1:8000' ">Back</button>
+</form>
+
+{% endblock %}

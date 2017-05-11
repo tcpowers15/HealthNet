@@ -1,0 +1,49 @@
+<!-- PatientHome.html -->
+
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Nurse Home{% endblock %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css '%}">
+
+    <h1> Welcome, {{ user.first_name }}! </h1>
+    <body>
+    <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/logout/">Log Out</a></li>
+    </ul>
+        <div class="button-holder">
+            <button type="button" onclick="window.location.href='/view_med/' ">Update Patient Medical Information</button>
+            <br /> <br />
+            <p><font size = "6"><u>Patient Prescriptions</u></font></p>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/prescriptionsN/' "> View Prescriptions</button>
+            <br /> <br />
+
+            <p><font size = "6"><u>Patient Appointment</u></font></p>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/new_appointment_N/' ">Create Appointment</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/appointment_calendar/' ">Appointment Calendar</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/view_appointments/' ">Update Appointments</button>
+            <br /> <br />
+
+            <p><font size = "6"><u>Patient Test </u></font></p>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/view_testsN/' ">View Test</button>
+            <br /> <br />
+
+            <p><font size = "6"><u>Private Message</u></font></p>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/messages/write' ">Send Messages</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/messages/inbox' ">View Inbox</button>
+            <br /> <br />
+            <button type="button" onclick="window.location.href='/messages/sent' ">View Sent messages</button>
+            <br /> <br />
+        </div>
+    </body>
+{% endblock %}
+

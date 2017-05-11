@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Hospital Activity{% endblock %}
+
+{% block head %}Hospital Activity Log{% endblock %}
+{% block content %}
+
+<h1>{{hospital.name}}</h1>
+            <br /><br />
+            {% for activity in activities %}
+                <p>{{activity.first_name}}
+                {{ ' ' }}
+                {{ activity.last_name }}
+                {{ ': '}}
+                {{ activity.action}}
+                {{ activity.target_first }}
+                {{ ' ' }}
+                {{ activity.target_last }}
+                {{ ' on '}}
+                {{ activity.date}}
+                {{ ' at '}}
+                {{ activity.time}}</p>
+            {% endfor %}
+        <button type="button" onclick="window.location.href='http://127.0.0.1:8000' ">Back</button>
+{% endblock %}

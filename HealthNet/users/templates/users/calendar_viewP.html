@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}View Appointments{% endblock %}
+{% block head %}Current Appointments{% endblock %}
+{% block content %}
+<form action="." method="post"/>{% csrf_token %}
+        <table border="0">
+        {% for appointment in appointments %}
+            <h1>{{appointment.date}}</h1>
+            <p>Description: {{appointment.description}}</p>
+            <p>Patient: {{appointment.patient|linebreaksbr}}</p>
+            <a href="{% url "edit_appointment" pk=appointment.id %}">Edit</a>
+            <br /><br />
+            {% endfor %}
+        </table>
+        <button type="button" onclick="window.location.href='http://127.0.0.1:8000' ">Back</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Update Appointments{% endblock %}
+{% block head %}Update Appointments{% endblock %}
+{% block content %}
+<form action="{{action}}" method="post"/>{% csrf_token %}
+            {{ form.as_p }}
+       <input type="submit" value="Update" />
+        <button type="button" onclick="window.location.href='http://127.0.0.1:8000' ">Back</button>
+</form>
+
+{% endblock %}

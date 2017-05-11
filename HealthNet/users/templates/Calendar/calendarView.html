@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <!--These are the required files to display the calendar view, depending on time more may be added for more functionality-->
+    <link href="{% static 'css/calendar.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/fullcalendar.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/fullcalendar.print.css' %}" rel="stylesheet" media="print" />
+
+    <script src="{% static 'js/moment.min.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/fullcalendar.js' %}"></script>
+
+
+
+    <!--This script initializes the calendar for display-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+        //page is ready, calendar is made on the next line
+        $('#calendar').fullCalendar({
+            header: {
+                center: 'month,basicWeek,basicDay'
+            },
+
+            eventLimit: true,
+            overlap: false,
+            editable: true,
+            events:[
+                {% for appointment in appointments %}
+                {
+                    title: '{{ appointment.description }}\n{{ appointment.doctor}}',
+                    start: '{{ appointment.date|date:"Y-m-d"}}T{{ appointment.start|time:"H:i:s"}}',
+                    end: '{{ appointment.date|date:"Y-m-d"}}T{{ appointment.end|time:"H:i:s"}}',
+                },
+                {% endfor %}
+            ],
+
+
+        });
+
+    });
+    </script>
+    <style>
+        body{
+            margin: 80px 40px;
+            padding: 0;
+            font-size: 14px;
+        }
+        #calendar{
+            max-width: 2000px;
+            margin: 0;
+        }
+    </style>
+
+    <title>Appointment Calendar</title>
+
+</head>
+
+<body>
+<div id="calendar"></div>
+
+<button type="button" onclick="window.location.href='http://127.0.0.1:8000' ">Back</button>
+
+</body>
+
+
+</html>

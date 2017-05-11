@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Update Patient Information{% endblock %}
+{% block head %}Update Patient Information{% endblock %}
+{% block content %}
+<form action="." method="post" enctype="multipart/form-data"/>{% csrf_token %}
+        <table border="0">
+        {{ form.as_table }}
+        </table>
+        <button type="submit" value="Update">Update</button>
+        <button type="button" onclick="window.location.href='http://127.0.0.1:8000' ">Back</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+<!-- register.html -->
+{% extends "base.html" %}
+{% block title %}Doctor Registration{% endblock %}
+{% block head %}Doctor Registration{% endblock %}
+{% block content %}
+    <form method="post" action=".">{% csrf_token %}
+        <table border="0">
+            {{ form.as_table }}
+        </table>
+        <button type="submit" value="Register">Register</button>
+        <button type="button" onclick="window.location.href='http://127.0.0.1:8000' ">Back</button>
+    </form>
+{% endblock %}
